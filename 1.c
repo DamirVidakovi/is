@@ -34,14 +34,14 @@ int main(void)
 
     for (i = 0; i < m; i++)
         for (j = 0; j < n; j++)
-            matrica[i][j] = rand() % (GG + 1 - DG) + DG;
+            matrica[i][j] = DG + rand() / RAND_MAX * (GG - DG);
 
     
     for (i = 0; i < m; i++)
     {
         int brojac2 = 0;
         for (j = 0; j < n; j++)
-            if (*((matrica + i)+j) == matrica[i][0])
+            if (*(*(matrica + i)+j) == matrica[i][0])
                 brojac2++;
         if (brojac2 == n)
             brojac++;
